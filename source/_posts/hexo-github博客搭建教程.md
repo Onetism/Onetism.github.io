@@ -1,12 +1,14 @@
 ---
 title: hexo+github博客搭建教程
 ---
-date: 2019-11-06 15:36:44
+发布日期: 2019-11-06 &emsp;&emsp;作者：Onetism
+
 ## 环境搭建
 ### 1.安装[Node.jd](https://nodejs.org/zh-cn/)
 &emsp;&emsp;首先，从官网下载稳定版Node.jd，一般选择长期支持版，如下图所示。安装过程全选默认，一路点击<font color=red>`Next`</font>。安装好之后，按下<font color=red>`Win+R`</font>打开命令提示符，输入<font color=red>`node -v`</font>和<font color=red>`npm -v`</font>，如果出现版本号，就证明安装成功。
 
 <div align=center><img src="1.png" width="75%" ></div>
+
 <div align=center><img src="3.png" width="75%" ></div>
 
 ### 2.安装[Git](https://git-scm.com/download/win)
@@ -35,19 +37,24 @@ date: 2019-11-06 15:36:44
 ### 5.本地与github连接
 &emsp;&emsp;首先，右键打开<font color=red>`Git Bash Here`</font>,,然后输入命令
 
-    git config --global user.name "Onetism"
-    git config --global user.email "onetism@163.com"
+```
+$ git config --global user.name "Onetism"
+$ git config --global user.email "onetism@163.com"
+```
 
 &emsp;&emsp;双引号内的用户名和邮箱是对应填写自己的就行。接下来生成密钥SSH Key。输入命令
 
-    ssh-keygen -t rsa -C "onetism@163.com"
+```
+$ ssh-keygen -t rsa -C "onetism@163.com"
+```
 
 &emsp;&emsp;一直回车，然后登录[Github](https://github.com/),点击自己头像，在点击<font color=red>`settings`</font>，再点击<font color=red>`SSH and GPG keys`</font>，新建一个SSH,名字随便取。
 
 &emsp;&emsp;在Git Bash中输入
  
-
-    cat ~/.ssh/id_rsa.pub
+```
+$ cat ~/.ssh/id_rsa.pub
+```
 
 &emsp;&emsp;将输出的内容复制到SSH框中，点击确认保存。
 
@@ -60,12 +67,12 @@ date: 2019-11-06 15:36:44
 <div align=center><img src="9.png" width="75%" ></div>
 
 &emsp;&emsp;打开博客目录下的<font color=red>`_config.yml`</font>文件，这是博客的配置文件，这里可以修改与博客相关的各种信息。在最后部分，配置改成：
-
+```
     deploy:
       type: git
       repository: https://github.com/Onetism/Onetism.github.io
       branch: master
-
+```
 &emsp;&emsp;<font color=red>`repository`</font>为自己的github项目地址。
 
 
@@ -86,13 +93,19 @@ date: 2019-11-06 15:36:44
 
 &emsp;&emsp;每次更换电脑以后，先将hexo分支克隆下来：
 
-    git clone -b hexo https://github.com/Onetism/Onetism.github.io
+```
+$ git clone -b hexo https://github.com/Onetism/Onetism.github.io
+```
+
 &emsp;&emsp;然后在这个文件下输入以下命令恢复博客：
 
+```
+$ npm install hexo-cli
+$ npm install
+$ npm install hexo-deployer-git
+```
 
-    npm install hexo-cli
-    npm install
-    npm install hexo-deployer-git
+
 &emsp;&emsp;这样就可以编写博客了，编写完成之后，我习惯于可以先备份再生成博客，也可以反过来，因此先执行<font color=red>`git add .`</font>，<font color=red>`git commit -m "hexo"`</font>，<font color=red>`git push --set-upstream origin hexo`</font>，最后执行<font color=red>`hexo g -d .`</font>。
 
 &emsp;&emsp;这样就基本完成了，有些需要下载的卡住的话，一般是科学上网的问题。
