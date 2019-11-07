@@ -1,7 +1,7 @@
 ---
 title: hexo+github博客搭建教程
 ---
-发布日期: 2019-11-06 &emsp;&emsp;作者：Onetism
+发布日期: 2019-11-06 &emsp;&emsp;作者：Onetism&emsp;&emsp;Github:[https://github.com/Onetism/Onetism.github.io](https://github.com/Onetism/Onetism.github.io)
 
 ## 环境搭建
 ### 1.安装[Node.jd](https://nodejs.org/zh-cn/)
