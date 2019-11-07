@@ -89,6 +89,7 @@ $ cat ~/.ssh/id_rsa.pub
 <div align=center><img src="12.png" width="75%" ></div>
 
 <div align=center><img src="13.png" width="75%" ></div>
+
 &emsp;&emsp;然后依次执行命令<font color=red>`git add .`</font>，然后<font color=red>`git commit -m "hexo"`</font>，最后<font color=red>`git push --set-upstream origin hexo`</font>提交就行了。这相当于就是上传了。
 
 &emsp;&emsp;每次更换电脑以后，先将hexo分支克隆下来：
