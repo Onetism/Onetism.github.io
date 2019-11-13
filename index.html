@@ -94,8 +94,8 @@ sudo apt-get upgrade</code></pre><p>&emsp;&emsp;然后安装<code>pip</code>,本
 <pre><code>sudo apt-get install python3-pip</code></pre><p>&emsp;&emsp;如果可以科学上网的话，可以直接输入下面命令进行安装：</p>
 <pre><code>pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip</code></pre><p>&emsp;&emsp;不科学上网上面命令是无法运行的，可以先在能够科学上网的设备上将安装包<a href="https://github.com/shadowsocks/shadowsocks/archive/master.zip" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks/archive/master.zip</a>下载下来,然后复制到系统下，输入命令下面命令安装：</p>
 <pre><code>pip3 install 压缩包的名字(例如：shadowsocks-master.zip)</code></pre><p>&emsp;&emsp;安装完成之后，输入下面命令查看版本号，如果是<code>3.0.0</code>的话，是支持<code>aes-256-gcm</code>加密方式的。</p>
-<pre><code>sudo ssserver --version</code></pre><p>&emsp;&emsp;创建Shadowsocks配置文件：</p>
-<pre><code>sudo vim /etc/shadowsocks/shadowsocks.json</code></pre><p>&emsp;&emsp;复制粘贴如下内容:</p>
+<pre><code>ssserver --version</code></pre><p>&emsp;&emsp;创建Shadowsocks配置文件：</p>
+<pre><code>sudo vim /etc/shadowsocks.json</code></pre><p>&emsp;&emsp;复制粘贴如下内容:</p>
 <pre><code>{
     &quot;server&quot;:&quot;服务器地址&quot;,
     &quot;server_port&quot;:服务器端口,
@@ -106,7 +106,7 @@ sudo apt-get upgrade</code></pre><p>&emsp;&emsp;然后安装<code>pip</code>,本
     &quot;method&quot;:&quot;aes-256-gcm(和服务器一致)&quot;,
     &quot;fast_open&quot;: false
 }</code></pre><p>&emsp;&emsp;按自己修改好后保存，退出，然后终端运行命令：</p>
-<pre><code>sslocal -c /etc/shadowsocks.json -d start</code></pre><p>&emsp;&emsp;再按照<a href="https://proxy-switchyomega.com/settings/" target="_blank" rel="noopener">浏览器配置代理教程</a>，教程测试谷歌即可。</p>
+<pre><code>sudo sslocal -c /etc/shadowsocks.json -d start</code></pre><p>&emsp;&emsp;如果命令找不到，使用绝对路径，用<code>which sslocal</code>,找到命令所在路径，再按照<a href="https://proxy-switchyomega.com/settings/" target="_blank" rel="noopener">浏览器配置代理教程</a>，教程测试谷歌即可。</p>
 <p>&emsp;&emsp;接下来，配置自启动，新建管理文件：</p>
 <pre><code>sudo vim /lib/systemd/system/shadowsocks.service</code></pre><p>&emsp;&emsp;复制以下内容，然后保存退出：</p>
 <pre><code>[Unit]
@@ -114,13 +114,13 @@ Description=Shadowsocks Server
 After=network.target
 
 [Service]
-ExecStart=/usr/local/bin/sslocal -c /etc/shadowsocks/shadowsocks.json
+ExecStart=/usr/local/bin/sslocal（命令所在位置） -c /etc/shadowsocks/shadowsocks.json（配置文件所在位置）
 Restart=on-abort
 
 [Install]
 WantedBy=multi-user.target</code></pre><p>&emsp;&emsp;运行<code>shadowsocks.service</code></p>
 <pre><code>sudo systemctl start shadowsocks.service</code></pre><p>&emsp;&emsp;允许开机自动启动</p>
-<pre><code>sudo systemctl enable shadowsocks.service</code></pre><p>&emsp;&emsp;查看运行状态</p>
+<pre><code>sudo systemctl enable /lib/systemd/system/shadowsocks.service</code></pre><p>&emsp;&emsp;查看运行状态</p>
 <pre><code>sudo systemctl status shadowsocks.service</code></pre><p>&emsp;&emsp;至此，安装完成，<code>ssserver</code>使用在服务器上，<code>sslocal</code>使用在客户机上。</p>
 
       
