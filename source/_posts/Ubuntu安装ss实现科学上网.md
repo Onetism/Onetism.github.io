@@ -25,11 +25,11 @@ title: Ubuntu安装ss实现科学上网
 
 &emsp;&emsp;安装完成之后，输入下面命令查看版本号，如果是`3.0.0`的话，是支持`aes-256-gcm`加密方式的。
 
-    sudo ssserver --version
+    ssserver --version
 
 &emsp;&emsp;创建Shadowsocks配置文件：
 
-    sudo vim /etc/shadowsocks/shadowsocks.json
+    sudo vim /etc/shadowsocks.json
 
 &emsp;&emsp;复制粘贴如下内容:
 
@@ -46,9 +46,9 @@ title: Ubuntu安装ss实现科学上网
 
 &emsp;&emsp;按自己修改好后保存，退出，然后终端运行命令：
 
-    sslocal -c /etc/shadowsocks.json -d start
+    sudo sslocal -c /etc/shadowsocks.json -d start
 
-&emsp;&emsp;再按照[浏览器配置代理教程](https://proxy-switchyomega.com/settings/)，教程测试谷歌即可。
+&emsp;&emsp;如果命令找不到，使用绝对路径，用`which sslocal`,找到命令所在路径，再按照[浏览器配置代理教程](https://proxy-switchyomega.com/settings/)，教程测试谷歌即可。
 
 &emsp;&emsp;接下来，配置自启动，新建管理文件：
 
@@ -61,7 +61,7 @@ title: Ubuntu安装ss实现科学上网
 	After=network.target
 	
 	[Service]
-	ExecStart=/usr/local/bin/sslocal -c /etc/shadowsocks/shadowsocks.json
+	ExecStart=/usr/local/bin/sslocal（命令所在位置） -c /etc/shadowsocks/shadowsocks.json（配置文件所在位置）
 	Restart=on-abort
 
 	[Install]
@@ -73,7 +73,7 @@ title: Ubuntu安装ss实现科学上网
 
 &emsp;&emsp;允许开机自动启动
 
-    sudo systemctl enable shadowsocks.service
+    sudo systemctl enable /lib/systemd/system/shadowsocks.service
 
 &emsp;&emsp;查看运行状态
 
