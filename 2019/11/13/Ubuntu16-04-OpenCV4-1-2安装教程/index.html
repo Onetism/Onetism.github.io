@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Ubuntu16.04+OpenCV安装教程 | Onetism</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="发布日期: 2019-11-12 09:21:45&amp;emsp;&amp;emsp;作者：Onetism &amp;emsp;&amp;emsp; Github:https:&#x2F;&#x2F;github.com&#x2F;Onetism&#x2F;Onetism.github.io 1.安装前的准备&amp;emsp;&amp;emsp;首先，更新软件 sudo apt-get update sudo apt-get upgrade&amp;emsp;&amp;emsp;接下来安装最新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu16.04+OpenCV安装教程">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;13&#x2F;Ubuntu16-04-OpenCV4-1-2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B&#x2F;index.html">
+<meta property="og:site_name" content="Onetism">
+<meta property="og:description" content="发布日期: 2019-11-12 09:21:45&amp;emsp;&amp;emsp;作者：Onetism &amp;emsp;&amp;emsp; Github:https:&#x2F;&#x2F;github.com&#x2F;Onetism&#x2F;Onetism.github.io 1.安装前的准备&amp;emsp;&amp;emsp;首先，更新软件 sudo apt-get update sudo apt-get upgrade&amp;emsp;&amp;emsp;接下来安装最新">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-13T11:02:00.377Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Onetism" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Onetism</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">人一旦将就，什么梦想也就没了，喜爱锤子的匠心，一加的不将就</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Ubuntu16-04-OpenCV4-1-2安装教程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/13/Ubuntu16-04-OpenCV4-1-2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" class="article-date">
+  <time datetime="2019-11-13T09:06:27.611Z" itemprop="datePublished">2019-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu16.04+OpenCV安装教程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>发布日期: 2019-11-12 09:21:45&emsp;&emsp;作者：Onetism &emsp;&emsp; Github:<a href="https://github.com/Onetism/Onetism.github.io" target="_blank" rel="noopener">https://github.com/Onetism/Onetism.github.io</a></p>
+<h2 id="1-安装前的准备"><a href="#1-安装前的准备" class="headerlink" title="1.安装前的准备"></a>1.安装前的准备</h2><p>&emsp;&emsp;首先，更新软件</p>
+<pre><code>sudo apt-get update
+sudo apt-get upgrade</code></pre><p>&emsp;&emsp;接下来安装最新的cmake,进入<a href="https://cmake.org/download/" target="_blank" rel="noopener">https://cmake.org/download/</a>下载最新版本的cmake源代码，解压：</p>
+<pre><code>tar -zxvf cmake-3.16.0-rc3.tar.gz(下载包的名字)</code></pre><p>&emsp;&emsp;先安装cmake(Ubuntu软件库中的旧版cmake)</p>
+<pre><code>sudo apt-get install cmake</code></pre><p>&emsp;&emsp;然后编译安装最新版本cmake,按步运行</p>
+<pre><code>cd cmake-3.15.2/(具体看解压后的名称)
+mkdir build
+cd build
+cmake ..
+make -j8(同时编译数，依据芯片核数选)
+sudo make install</code></pre><p>&emsp;&emsp;cmake源码安装之后是没有GUI的，要安装cmake-gui，还需要安装cmake-qt-gui：</p>
+<pre><code>sudo apt-get install cmake-qt-gui</code></pre><p>&emsp;&emsp;下载<a href="https://github.com/opencv/opencv/releases" target="_blank" rel="noopener">OpenCV</a>的源代码和对应版本的<a href="https://github.com/opencv/opencv_contrib/releases" target="_blank" rel="noopener">opencv_contrib</a>源代码。</p>
+<h2 id="2-安装依赖项编译"><a href="#2-安装依赖项编译" class="headerlink" title="2.安装依赖项编译"></a>2.安装依赖项编译</h2><p>&emsp;&emsp;首先依赖项安装：</p>
+<pre><code>sudo apt-get install build-essential cmake unzip pkg-config
+sudo apt-get install libjpeg-dev libpng-dev libtiff-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install libxvidcore-dev libx264-dev
+sudo apt-get install libgtk-3-dev
+sudo apt-get install libatlas-base-dev gfortran
+sudo apt-get install python3-dev</code></pre><p>&emsp;&emsp;对前面下载的源代码解压：</p>
+<pre><code>tar -zxvf opencv-4.1.1.tar.gz(根据自己文件名字定)
+tar -zxvf opencv_contrib-4.1.1.tar.gz(根据自己文件名字定)</code></pre><p>&emsp;&emsp;新建文件夹，储存编译文件：</p>
+<pre><code>cd opencv-4.1.1/(根据自己文件名字定)
+mkdir build</code></pre><p>&emsp;&emsp;打开cmake-gui，设定<font color="red"><code>source code</code></font>目录为<font color="red"><code>/home/onetism/opencv-4.1.1/onetism</code></font>是用户名，每个电脑设置不一样，选择自己的即可。设定<font color="red"><code>binaries</code></font>目录为刚才新建的<font color="red"><code>build</code></font>目录，也就是<font color="red"><code>/home/onetism/opencv-4.1.1/build</code></font>。</p>
+<p>&emsp;&emsp;OpenCV默认生成的python版本是python 2.7，为了让OpenCV编译生成<font color="red"><code>python 3</code></font>版本的<font color="red"><code>opencv_python3</code></font>，需要添加一个编译选项。在cmake-gui当中，点击<font color="red"><code>Add Entry</code></font>，如下图所示，填入编译选项名字<font color="red"><code>PYTHON_DEFAULT_EXECUTABLE</code></font>和系统中<font color="red"><code>python 3</code></font>的路径<font color="red"><code>/usr/bin/python3.5</code></font>（依实际情况而定）即可,<code>Type</code>选择<font color="red"><code>FILEPATH</code></font>。</p>
+<p>&emsp;&emsp;完成以后点击<code>configure</code>，按默认操作即可，等待完成，然后进行编译配置，将<font color="red"><code>OPENCV_GENERATE_PKGCONFIG</code></font>打开，新版本的OpenCV默认把这个编译选项给关掉了！如果该选项没有打开，pkg-config就没法使用了。这样，你想在命令行里直接编译opencv程序会是很痛苦的事情，只能借助CMake解决，同时<font color="red"><code>CMAKE_BUILD_TYPE</code></font>输入<font color="red"><code>Release</code></font>。</p>
+<p>&emsp;&emsp;为了编译<code>opencv_contrib</code>，需要在cmake-gui中将编译选项<font color="red"><code>OPENCV_EXTRA_MODULES_PATH</code></font>填入contrib库所在的路径，比如<font color="red"><code>/home/your-name/opencv_contrib-4.1.1/modules/</code></font></p>
+<p>&emsp;&emsp;最后，编译安装OpenCV生成Makefile之后，进入/home/onetism/opencv-4.1.1/build，编译并安装。然后是漫长的等待过程。</p>
+<pre><code>make -j8
+sudo make install</code></pre><p>&emsp;&emsp;验证<code>pkg-config</code>功能是否正确，回到主目录：</p>
+<pre><code>pkg-config --cflags --libs opencv4</code></pre><p>&emsp;&emsp;如果同时安装了ROS系统，那么<code>import cv2</code>会报错，主要是python版本的原因，可以给ROS的改个名字：</p>
+<pre><code>cd /opt/ros/kinetic/lib/python2.7/dist-packages/(自己的路径)
+sudo mv cv2.so cv2_ros.so</code></pre><p>&emsp;&emsp;cmake需要下载，有可能因为墙的的原因下载慢或者下载失败，可以查看我的另外博客——<a href="https://onetism.github.io/2019/11/12/Ubuntu%E5%AE%89%E8%A3%85ss%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" target="_blank" rel="noopener">Ubuntu安装ss实现科学上网</a></p>
+<h2 id="3-配置环境变量"><a href="#3-配置环境变量" class="headerlink" title="3.配置环境变量"></a>3.配置环境变量</h2><pre><code>sudo vim ~/.bashrc</code></pre><p>&emsp;&emsp;在最后行添加<code>export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig</code>，保存退出。</p>
+<pre><code>sudo vim /etc/ld.so.conf.d/opencv.conf</code></pre><p>&emsp;&emsp;创建的文件中加上<code>/usr/local/lib</code>，在运行以下命令</p>
+<pre><code>sudo ldconfig</code></pre><h2 id="4-测试"><a href="#4-测试" class="headerlink" title="4.测试"></a>4.测试</h2><pre><code>cd ~/opencv4.1.2/samples/cpp/example_cmake(自己的路径)
+cmake .
+make -j8
+./opencv_example</code></pre><p>&emsp;&emsp;会打开电脑的自带摄像头，如果没有修改<code>example.cpp</code>,重新编译测试。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/13/Ubuntu16-04-OpenCV4-1-2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" data-id="ck2x647kw00008sti8oy2da0f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/12/Ubuntu%E5%AE%89%E8%A3%85ss%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ubuntu安装ss实现科学上网</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/13/Ubuntu16-04-OpenCV4-1-2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">Ubuntu16.04+OpenCV安装教程</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/Ubuntu%E5%AE%89%E8%A3%85ss%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">Ubuntu安装ss实现科学上网</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/VMware-SS%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">VMware+SS使用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/hexo-github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">hexo+github博客搭建教程</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Onetism_Su<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
