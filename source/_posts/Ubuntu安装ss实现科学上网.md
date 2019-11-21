@@ -80,3 +80,13 @@ title: Ubuntu安装ss实现科学上网
     sudo systemctl status shadowsocks.service
 
 &emsp;&emsp;至此，安装完成，`ssserver`使用在服务器上，`sslocal`使用在客户机上。
+
+### 下载最新libsodium
+&emsp;&emsp; 现在最新的chacha20加密方式，上面是不能够用的，因此需要更新，通过以下方式就可以实现了：
+
+	sudo apt-get install build-essential
+	wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz 或者wget https://github.com/jedisct1/libsodium/releases/download/1.0.10/libsodium-1.0.10.tar.gz
+	tar -xzvf LATEST.tar.gz或者libsodium-1.0.10.tar.gz
+	cd libsodium*（解压文件夹下）
+	./configure && make -j8 && sudo make install
+	ldconfig

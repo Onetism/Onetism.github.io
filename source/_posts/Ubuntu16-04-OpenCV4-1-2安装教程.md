@@ -54,7 +54,7 @@ title: Ubuntu16.04+OpenCV安装教程
 
 	cd opencv-4.1.1/(根据自己文件名字定)
 	mkdir build
-&emsp;&emsp;打开cmake-gui，设定<font color=red>`source code`</font>目录为<font color=red>`/home/onetism/opencv-4.1.1/onetism`</font>是用户名，每个电脑设置不一样，选择自己的即可。设定<font color=red>`binaries`</font>目录为刚才新建的<font color=red>`build`</font>目录，也就是<font color=red>`/home/onetism/opencv-4.1.1/build`</font>。
+&emsp;&emsp;打开cmake-gui，设定<font color=red>`source code`</font>目录为<font color=red>`/home/onetism/opencv-4.1.1/`</font>，`onetism`是用户名，每个电脑设置不一样，选择自己的即可。设定<font color=red>`binaries`</font>目录为刚才新建的<font color=red>`build`</font>目录，也就是<font color=red>`/home/onetism/opencv-4.1.1/build`</font>。
 
 &emsp;&emsp;OpenCV默认生成的python版本是python 2.7，为了让OpenCV编译生成<font color=red>`python 3`</font>版本的<font color=red>`opencv_python3`</font>，需要添加一个编译选项。在cmake-gui当中，点击<font color=red>`Add Entry`</font>，如下图所示，填入编译选项名字<font color=red>`PYTHON_DEFAULT_EXECUTABLE`</font>和系统中<font color=red>`python 3`</font>的路径<font color=red>`/usr/bin/python3.5`</font>（依实际情况而定）即可,`Type`选择<font color=red>`FILEPATH`</font>。
 
