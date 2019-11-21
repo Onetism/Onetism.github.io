@@ -111,7 +111,7 @@ sudo apt-get install python3-dev</code></pre><p>&emsp;&emsp;对前面下载的�
 <pre><code>tar -zxvf opencv-4.1.1.tar.gz(根据自己文件名字定)
 tar -zxvf opencv_contrib-4.1.1.tar.gz(根据自己文件名字定)</code></pre><p>&emsp;&emsp;新建文件夹，储存编译文件：</p>
 <pre><code>cd opencv-4.1.1/(根据自己文件名字定)
-mkdir build</code></pre><p>&emsp;&emsp;打开cmake-gui，设定<font color="red"><code>source code</code></font>目录为<font color="red"><code>/home/onetism/opencv-4.1.1/onetism</code></font>是用户名，每个电脑设置不一样，选择自己的即可。设定<font color="red"><code>binaries</code></font>目录为刚才新建的<font color="red"><code>build</code></font>目录，也就是<font color="red"><code>/home/onetism/opencv-4.1.1/build</code></font>。</p>
+mkdir build</code></pre><p>&emsp;&emsp;打开cmake-gui，设定<font color="red"><code>source code</code></font>目录为<font color="red"><code>/home/onetism/opencv-4.1.1/</code></font>，<code>onetism</code>是用户名，每个电脑设置不一样，选择自己的即可。设定<font color="red"><code>binaries</code></font>目录为刚才新建的<font color="red"><code>build</code></font>目录，也就是<font color="red"><code>/home/onetism/opencv-4.1.1/build</code></font>。</p>
 <p>&emsp;&emsp;OpenCV默认生成的python版本是python 2.7，为了让OpenCV编译生成<font color="red"><code>python 3</code></font>版本的<font color="red"><code>opencv_python3</code></font>，需要添加一个编译选项。在cmake-gui当中，点击<font color="red"><code>Add Entry</code></font>，如下图所示，填入编译选项名字<font color="red"><code>PYTHON_DEFAULT_EXECUTABLE</code></font>和系统中<font color="red"><code>python 3</code></font>的路径<font color="red"><code>/usr/bin/python3.5</code></font>（依实际情况而定）即可,<code>Type</code>选择<font color="red"><code>FILEPATH</code></font>。</p>
 <p>&emsp;&emsp;完成以后点击<code>configure</code>，按默认操作即可，等待完成，然后进行编译配置，将<font color="red"><code>OPENCV_GENERATE_PKGCONFIG</code></font>打开，新版本的OpenCV默认把这个编译选项给关掉了！如果该选项没有打开，pkg-config就没法使用了。这样，你想在命令行里直接编译opencv程序会是很痛苦的事情，只能借助CMake解决，同时<font color="red"><code>CMAKE_BUILD_TYPE</code></font>输入<font color="red"><code>Release</code></font>。</p>
 <p>&emsp;&emsp;为了编译<code>opencv_contrib</code>，需要在cmake-gui中将编译选项<font color="red"><code>OPENCV_EXTRA_MODULES_PATH</code></font>填入contrib库所在的路径，比如<font color="red"><code>/home/your-name/opencv_contrib-4.1.1/modules/</code></font></p>
@@ -198,7 +198,13 @@ WantedBy=multi-user.target</code></pre><p>&emsp;&emsp;运行<code>shadowsocks.se
 <pre><code>sudo systemctl start shadowsocks.service</code></pre><p>&emsp;&emsp;允许开机自动启动</p>
 <pre><code>sudo systemctl enable /lib/systemd/system/shadowsocks.service</code></pre><p>&emsp;&emsp;查看运行状态</p>
 <pre><code>sudo systemctl status shadowsocks.service</code></pre><p>&emsp;&emsp;至此，安装完成，<code>ssserver</code>使用在服务器上，<code>sslocal</code>使用在客户机上。</p>
-
+<h3 id="下载最新libsodium"><a href="#下载最新libsodium" class="headerlink" title="下载最新libsodium"></a>下载最新libsodium</h3><p>&emsp;&emsp; 现在最新的chacha20加密方式，上面是不能够用的，因此需要更新，通过以下方式就可以实现了：</p>
+<pre><code>sudo apt-get install build-essential
+wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz 或者wget https://github.com/jedisct1/libsodium/releases/download/1.0.10/libsodium-1.0.10.tar.gz
+tar -xzvf LATEST.tar.gz或者libsodium-1.0.10.tar.gz
+cd libsodium*（解压文件夹下）
+./configure &amp;&amp; make -j8 &amp;&amp; sudo make install
+ldconfig</code></pre>
       
     </div>
     <footer class="article-footer">

@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="Onetism">
 <meta property="og:description" content="发布日期: 2019-11-12 09:21:45&amp;emsp;&amp;emsp;作者：Onetism &amp;emsp;&amp;emsp; Github:https:&#x2F;&#x2F;github.com&#x2F;Onetism&#x2F;Onetism.github.io 1.安装前的准备&amp;emsp;&amp;emsp;首先，更新软件 sudo apt-get update sudo apt-get upgrade&amp;emsp;&amp;emsp;接下来安装最新">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-13T11:02:00.377Z">
+<meta property="og:updated_time" content="2019-11-21T12:31:06.487Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Onetism" type="application/atom+xml">
@@ -112,7 +112,7 @@ sudo apt-get install python3-dev</code></pre><p>&emsp;&emsp;对前面下载的�
 <pre><code>tar -zxvf opencv-4.1.1.tar.gz(根据自己文件名字定)
 tar -zxvf opencv_contrib-4.1.1.tar.gz(根据自己文件名字定)</code></pre><p>&emsp;&emsp;新建文件夹，储存编译文件：</p>
 <pre><code>cd opencv-4.1.1/(根据自己文件名字定)
-mkdir build</code></pre><p>&emsp;&emsp;打开cmake-gui，设定<font color="red"><code>source code</code></font>目录为<font color="red"><code>/home/onetism/opencv-4.1.1/onetism</code></font>是用户名，每个电脑设置不一样，选择自己的即可。设定<font color="red"><code>binaries</code></font>目录为刚才新建的<font color="red"><code>build</code></font>目录，也就是<font color="red"><code>/home/onetism/opencv-4.1.1/build</code></font>。</p>
+mkdir build</code></pre><p>&emsp;&emsp;打开cmake-gui，设定<font color="red"><code>source code</code></font>目录为<font color="red"><code>/home/onetism/opencv-4.1.1/</code></font>，<code>onetism</code>是用户名，每个电脑设置不一样，选择自己的即可。设定<font color="red"><code>binaries</code></font>目录为刚才新建的<font color="red"><code>build</code></font>目录，也就是<font color="red"><code>/home/onetism/opencv-4.1.1/build</code></font>。</p>
 <p>&emsp;&emsp;OpenCV默认生成的python版本是python 2.7，为了让OpenCV编译生成<font color="red"><code>python 3</code></font>版本的<font color="red"><code>opencv_python3</code></font>，需要添加一个编译选项。在cmake-gui当中，点击<font color="red"><code>Add Entry</code></font>，如下图所示，填入编译选项名字<font color="red"><code>PYTHON_DEFAULT_EXECUTABLE</code></font>和系统中<font color="red"><code>python 3</code></font>的路径<font color="red"><code>/usr/bin/python3.5</code></font>（依实际情况而定）即可,<code>Type</code>选择<font color="red"><code>FILEPATH</code></font>。</p>
 <p>&emsp;&emsp;完成以后点击<code>configure</code>，按默认操作即可，等待完成，然后进行编译配置，将<font color="red"><code>OPENCV_GENERATE_PKGCONFIG</code></font>打开，新版本的OpenCV默认把这个编译选项给关掉了！如果该选项没有打开，pkg-config就没法使用了。这样，你想在命令行里直接编译opencv程序会是很痛苦的事情，只能借助CMake解决，同时<font color="red"><code>CMAKE_BUILD_TYPE</code></font>输入<font color="red"><code>Release</code></font>。</p>
 <p>&emsp;&emsp;为了编译<code>opencv_contrib</code>，需要在cmake-gui中将编译选项<font color="red"><code>OPENCV_EXTRA_MODULES_PATH</code></font>填入contrib库所在的路径，比如<font color="red"><code>/home/your-name/opencv_contrib-4.1.1/modules/</code></font></p>
