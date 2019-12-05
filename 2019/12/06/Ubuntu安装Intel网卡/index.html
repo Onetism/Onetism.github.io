@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Ubuntu安装Intel网卡 | Onetism</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="发布日期: 2019-11-12 09:21:45&amp;emsp;&amp;emsp;作者：Onetism &amp;emsp;&amp;emsp; Github:https:&#x2F;&#x2F;github.com&#x2F;Onetism&#x2F;Onetism.github.io &amp;emsp;&amp;emsp;Ubuntu很多时候受制于显卡和网卡的驱动，以前没有遇到过，最近换了台新电脑，发现显卡也不能用，无线网卡也不能用，弄了好久才解决。 1.无法进入桌面&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu安装Intel网卡">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;06&#x2F;Ubuntu%E5%AE%89%E8%A3%85Intel%E7%BD%91%E5%8D%A1&#x2F;index.html">
+<meta property="og:site_name" content="Onetism">
+<meta property="og:description" content="发布日期: 2019-11-12 09:21:45&amp;emsp;&amp;emsp;作者：Onetism &amp;emsp;&amp;emsp; Github:https:&#x2F;&#x2F;github.com&#x2F;Onetism&#x2F;Onetism.github.io &amp;emsp;&amp;emsp;Ubuntu很多时候受制于显卡和网卡的驱动，以前没有遇到过，最近换了台新电脑，发现显卡也不能用，无线网卡也不能用，弄了好久才解决。 1.无法进入桌面&amp;">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;06&#x2F;Ubuntu%E5%AE%89%E8%A3%85Intel%E7%BD%91%E5%8D%A1&#x2F;1.png">
+<meta property="og:updated_time" content="2019-12-05T18:44:00.200Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;06&#x2F;Ubuntu%E5%AE%89%E8%A3%85Intel%E7%BD%91%E5%8D%A1&#x2F;1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Onetism" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Onetism</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">人一旦将就，什么梦想也就没了，喜爱锤子的匠心，一加的不将就</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Ubuntu安装Intel网卡" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/12/06/Ubuntu%E5%AE%89%E8%A3%85Intel%E7%BD%91%E5%8D%A1/" class="article-date">
+  <time datetime="2019-12-05T17:52:06.473Z" itemprop="datePublished">2019-12-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu安装Intel网卡
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>发布日期: 2019-11-12 09:21:45&emsp;&emsp;作者：Onetism &emsp;&emsp; Github:<a href="https://github.com/Onetism/Onetism.github.io" target="_blank" rel="noopener">https://github.com/Onetism/Onetism.github.io</a></p>
+<p>&emsp;&emsp;Ubuntu很多时候受制于显卡和网卡的驱动，以前没有遇到过，最近换了台新电脑，发现显卡也不能用，无线网卡也不能用，弄了好久才解决。</p>
+<h3 id="1-无法进入桌面"><a href="#1-无法进入桌面" class="headerlink" title="1.无法进入桌面"></a>1.无法进入桌面</h3><p>&emsp;&emsp;不管装系统还是装好以后无法进入桌面或者黑屏，在进入<code>Grub</code>的时候，在键盘上按e进入编辑引导选项的界面，找到<code>linux</code>那一行，后面有<code>ro quiet splash</code>,<code>ro</code>是是只读的意思，在操作系统开机启动过程中，有些软件是要写入一些信息和数据到系统中的，因此可以尝试改成<code>rw</code>,同时为了排除独立显卡的影响因素，在<code>splash</code>后面加上<code>nomodeset</code>,然后按F10重启，即可进入系统。</p>
+<p>&emsp;&emsp;如果想要后面一直按此引导，使用命令<code>sudo gedit /etc/default/grub</code>,在其中找到<code>quiet splash</code>，在其后面加上<code>nomodeset</code>，然后输入<code>sudo update-grub</code>，更新grub配置，重新启动即可。</p>
+<h3 id="2-Intel无线网卡驱动安装"><a href="#2-Intel无线网卡驱动安装" class="headerlink" title="2.Intel无线网卡驱动安装"></a>2.Intel无线网卡驱动安装</h3><p>&emsp;&emsp;进入系统以后，发现wifi模块完全不见了，大部分原因是驱动不行，对于Intel的无线网卡驱动，首先去<a href="https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi" target="_blank" rel="noopener">Intel官网</a>下载<a href="https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/linux-firmware.git" target="_blank" rel="noopener">linux-firmware</a>,这是最新的驱动，将系统自带的更换为最新的，使用命令：</p>
+<pre><code>sudo rm -r /lib/firmware
+sudo mv /home/oneitms/linux-firmware /lib/firmware
+sudo chgrp root /lib/firmware -R
+sudo chown root /lib/firmware -R
+sudo chmod u=rwx,g=rx /lib/firmware -R</code></pre><p>&emsp;&emsp;然后安装Intel装载驱动程序，使用命令：</p>
+<pre><code>git clone https://git.kernel.org/pub/scm/linux/kernel/git/iwlwifi/backport-iwlwifi.git 
+cd backport-iwlwifi/
+sudo make defconfig-iwlwifi-public
+sed -i &apos;s/CPTCFG_IWLMVM_VENDOR_CMDS=y/# CPTCFG_IWLMVM_VENDOR_CMDS is not set/&apos; .config
+sudo make -j8
+sudo make install</code></pre><p>&emsp;&emsp;最后，重新启动即可，需要注意的是，要先下最新的驱动程序，在安装装载程序，如果系统更新后无线网络又不能使用的话，重新到backport-iwlwifi目录，执行sudo make install.</p>
+<div align="center"><img src="/2019/12/06/Ubuntu%E5%AE%89%E8%A3%85Intel%E7%BD%91%E5%8D%A1/1.png" width="75%"></div>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/12/06/Ubuntu%E5%AE%89%E8%A3%85Intel%E7%BD%91%E5%8D%A1/" data-id="ck3t2n7360001esti7poi8bpn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/13/Ubuntu16-04-OpenCV4-1-2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Ubuntu16.04+OpenCV安装教程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/12/06/Ubuntu%E5%AE%89%E8%A3%85Intel%E7%BD%91%E5%8D%A1/">Ubuntu安装Intel网卡</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/13/Ubuntu16-04-OpenCV4-1-2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">Ubuntu16.04+OpenCV安装教程</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/Ubuntu%E5%AE%89%E8%A3%85ss%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">Ubuntu安装ss实现科学上网</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/VMware-SS%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">VMware+SS使用方法</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/12/hexo-github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">hexo+github博客搭建教程</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Onetism_Su<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
