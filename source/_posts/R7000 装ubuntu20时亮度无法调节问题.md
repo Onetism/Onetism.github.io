@@ -1,7 +1,7 @@
 ---
 title: R7000 装ubuntu20时亮度无法调节问题
 ---
-发布日期: 2019-11-12 09:21:45&emsp;&emsp;作者：Onetism &emsp;&emsp; Github:[https://github.com/Onetism/Onetism.github.io](https://github.com/Onetism/Onetism.github.io)
+发布日期: 2020-11-12 09:21:45&emsp;&emsp;作者：Onetism &emsp;&emsp; Github:[https://github.com/Onetism/Onetism.github.io](https://github.com/Onetism/Onetism.github.io)
 
 
 ## 1.第一步
@@ -32,4 +32,5 @@ sudo vim /usr/share/X11/xorg.conf.d/10-nvidia.conf
 sudo vim /etc/modprobe.d/blacklist.conf
 ```
 &emsp;&emsp;在文件最后一行加上`blacklist ideapad_latop`
+
 &emsp;&emsp; 重启即可使用`Fn+快捷键`调节亮度了
