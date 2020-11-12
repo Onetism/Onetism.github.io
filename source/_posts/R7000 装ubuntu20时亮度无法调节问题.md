@@ -24,6 +24,16 @@ sudo update-grub
 sudo vim /usr/share/X11/xorg.conf.d/10-nvidia.conf 
 ```
 &emsp;&emsp;修改文件内容成以下形式
+```
+Section "Device0"
+        Identifier "Device0"
+        Driver "nvidia"
+        VendorName "NVIDIA Corporation"
+        Option "RegistryDwords" "EnableBrightnessControl=1"
+        Option "NoLogo" "True"
+Endsection
+
+```
 <div align=center><img src="R7000 装ubuntu20时亮度无法调节问题/2.png" width="75%" ></div>
 
 ## 4.第五步
