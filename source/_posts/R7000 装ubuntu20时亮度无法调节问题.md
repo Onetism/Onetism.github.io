@@ -25,7 +25,7 @@ sudo vim /usr/share/X11/xorg.conf.d/10-nvidia.conf
 ```
 &emsp;&emsp;修改文件内容成以下形式
 ```
-Section "Device0"
+Section "Device"
         Identifier "Device0"
         Driver "nvidia"
         VendorName "NVIDIA Corporation"
