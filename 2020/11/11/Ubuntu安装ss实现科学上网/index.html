@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Ubuntu安装ss实现科学上网 | Onetism</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="发布日期: 2019-11-12 09:21:45&amp;emsp;&amp;emsp;作者：Onetism &amp;emsp;&amp;emsp; Github:https:&#x2F;&#x2F;github.com&#x2F;Onetism&#x2F;Onetism.github.io 安装步骤&amp;emsp;&amp;emsp;为了便于开发，偶尔还是需要墙外的资源，因此在Ubuntu下如何进行科学上网。新装的系统，首先输入命令,更新软件： sudo apt-get u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu安装ss实现科学上网">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;11&#x2F;11&#x2F;Ubuntu%E5%AE%89%E8%A3%85ss%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91&#x2F;index.html">
+<meta property="og:site_name" content="Onetism">
+<meta property="og:description" content="发布日期: 2019-11-12 09:21:45&amp;emsp;&amp;emsp;作者：Onetism &amp;emsp;&amp;emsp; Github:https:&#x2F;&#x2F;github.com&#x2F;Onetism&#x2F;Onetism.github.io 安装步骤&amp;emsp;&amp;emsp;为了便于开发，偶尔还是需要墙外的资源，因此在Ubuntu下如何进行科学上网。新装的系统，首先输入命令,更新软件： sudo apt-get u">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-11-11T14:48:36.331Z">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Onetism" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Onetism</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">人一旦将就，什么梦想也就没了，喜爱锤子的匠心，一加的不将就</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Ubuntu安装ss实现科学上网" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/11/Ubuntu%E5%AE%89%E8%A3%85ss%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="article-date">
+  <time datetime="2020-11-11T14:48:36.331Z" itemprop="datePublished">2020-11-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Ubuntu安装ss实现科学上网
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>发布日期: 2019-11-12 09:21:45&emsp;&emsp;作者：Onetism &emsp;&emsp; Github:<a href="https://github.com/Onetism/Onetism.github.io" target="_blank" rel="noopener">https://github.com/Onetism/Onetism.github.io</a></p>
+<h3 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h3><p>&emsp;&emsp;为了便于开发，偶尔还是需要墙外的资源，因此在Ubuntu下如何进行科学上网。新装的系统，首先输入命令,更新软件：</p>
+<pre><code>sudo apt-get update
+sudo apt-get upgrade</code></pre><p>&emsp;&emsp;然后安装<code>pip</code>,本次使用的是Python3,所以首先安装<code>pip3</code>,s输入命令：</p>
+<pre><code>sudo apt-get install python3-pip</code></pre><p>&emsp;&emsp;如果可以科学上网的话，可以直接输入下面命令进行安装：</p>
+<pre><code>pip3 install https://github.com/shadowsocks/shadowsocks/archive/master.zip</code></pre><p>&emsp;&emsp;不科学上网上面命令是无法运行的，可以先在能够科学上网的设备上将安装包<a href="https://github.com/shadowsocks/shadowsocks/archive/master.zip" target="_blank" rel="noopener">https://github.com/shadowsocks/shadowsocks/archive/master.zip</a>下载下来,然后复制到系统下，输入命令下面命令安装：</p>
+<pre><code>pip3 install 压缩包的名字(例如：shadowsocks-master.zip)</code></pre><p>&emsp;&emsp;安装完成之后，输入下面命令查看版本号，如果是<code>3.0.0</code>的话，是支持<code>aes-256-gcm</code>加密方式的。</p>
+<pre><code>ssserver --version</code></pre><p>&emsp;&emsp;创建Shadowsocks配置文件：</p>
+<pre><code>sudo vim /etc/shadowsocks.json</code></pre><p>&emsp;&emsp;复制粘贴如下内容:</p>
+<pre><code>{
+    &quot;server&quot;:&quot;服务器地址&quot;,
+    &quot;server_port&quot;:服务器端口,
+    &quot;local_address&quot;: &quot;127.0.0.1&quot;,
+    &quot;local_port&quot;:1080,
+    &quot;password&quot;:&quot;服务器密码&quot;,
+    &quot;timeout&quot;:300,
+    &quot;method&quot;:&quot;aes-256-gcm(和服务器一致)&quot;,
+    &quot;fast_open&quot;: false
+}</code></pre><p>&emsp;&emsp;按自己修改好后保存，退出，然后终端运行命令：</p>
+<pre><code>sudo sslocal -c /etc/shadowsocks.json -d start</code></pre><p>&emsp;&emsp;如果命令找不到，使用绝对路径，用<code>which sslocal</code>,找到命令所在路径，再按照<a href="https://proxy-switchyomega.com/settings/" target="_blank" rel="noopener">浏览器配置代理教程</a>，教程测试谷歌即可。</p>
+<p>&emsp;&emsp;接下来，配置自启动，新建管理文件：</p>
+<pre><code>sudo vim /lib/systemd/system/shadowsocks.service</code></pre><p>&emsp;&emsp;复制以下内容，然后保存退出：</p>
+<pre><code>[Unit]
+Description=Shadowsocks Server
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/sslocal（命令所在位置） -c /etc/shadowsocks/shadowsocks.json（配置文件所在位置）
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target</code></pre><p>&emsp;&emsp;运行<code>shadowsocks.service</code></p>
+<pre><code>sudo systemctl start shadowsocks.service</code></pre><p>&emsp;&emsp;允许开机自动启动</p>
+<pre><code>sudo systemctl enable /lib/systemd/system/shadowsocks.service</code></pre><p>&emsp;&emsp;查看运行状态</p>
+<pre><code>sudo systemctl status shadowsocks.service</code></pre><p>&emsp;&emsp;至此，安装完成，<code>ssserver</code>使用在服务器上，<code>sslocal</code>使用在客户机上。</p>
+<h3 id="下载最新libsodium"><a href="#下载最新libsodium" class="headerlink" title="下载最新libsodium"></a>下载最新libsodium</h3><p>&emsp;&emsp; 现在最新的chacha20加密方式，上面是不能够用的，因此需要更新，通过以下方式就可以实现了：</p>
+<pre><code>sudo apt-get install build-essential
+wget https://download.libsodium.org/libsodium/releases/LATEST.tar.gz 或者wget https://github.com/jedisct1/libsodium/releases/download/1.0.10/libsodium-1.0.10.tar.gz
+tar -xzvf LATEST.tar.gz或者libsodium-1.0.10.tar.gz
+cd libsodium*（解压文件夹下）
+./configure &amp;&amp; make -j8 &amp;&amp; sudo make install
+ldconfig</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/11/11/Ubuntu%E5%AE%89%E8%A3%85ss%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" data-id="ckhe8b8ac0003ty0vcqor9usp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/11/Ubuntu16-04-OpenCV4-1-2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ubuntu16.04+OpenCV安装教程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/11/VMware-SS%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">VMware+SS使用方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a><span class="archive-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/11/hexo-github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">hexo+github博客搭建教程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/11/Ubuntu%E5%AE%89%E8%A3%85Intel%E7%BD%91%E5%8D%A1/">Ubuntu安装Intel网卡</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/11/Ubuntu16-04-OpenCV4-1-2%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/">Ubuntu16.04+OpenCV安装教程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/11/Ubuntu%E5%AE%89%E8%A3%85ss%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">Ubuntu安装ss实现科学上网</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/11/VMware-SS%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/">VMware+SS使用方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Onetism_Su<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
